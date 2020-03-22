@@ -2,6 +2,9 @@ FROM dtzar/helm-kubectl:3.1.2
 
 RUN apk add --no-cache --upgrade bash
 
+RUN curl https://sdk.cloud.google.com > install.sh
+RUN bash install.sh --disable-prompts
+
 RUN echo "**** install Python ****" && \
     apk add --no-cache python3 && \
     if [ ! -e /usr/bin/python ]; then ln -sf python3 /usr/bin/python ; fi && \
