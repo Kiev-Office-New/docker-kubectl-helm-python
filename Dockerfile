@@ -17,6 +17,9 @@ RUN curl https://sdk.cloud.google.com > install.sh
 RUN bash install.sh --disable-prompts
 ENV PATH $PATH:/root/google-cloud-sdk/bin
 
+RUN pip3 install websockets
+RUN pip3 install nest_asyncio
+
 # RUN apk add --update \
 #     python \
 #     python-dev \
