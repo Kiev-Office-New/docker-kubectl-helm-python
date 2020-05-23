@@ -15,6 +15,7 @@ RUN echo "**** install Python ****" && \
 RUN apk add --no-cache jq
 RUN curl https://sdk.cloud.google.com > install.sh
 RUN bash install.sh --disable-prompts
+ENV PATH $PATH:/root/google-cloud-sdk/bin
 
 # RUN apk add --update \
 #     python \
